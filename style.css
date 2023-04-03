@@ -50,13 +50,16 @@ form {
     accent-color: hsla(120, 100%, 50%, 0.482);
 }
 
+
 /*
   - These styles use 'class names'
   - You can apply them by using the 'class' attribute on your HTML
   - like this: <div class="wrapper">
   - note that the period vanishes there!
 */
-
+.nav_right{
+    float: right;
+}
 
 .wrapper {
     min-height: 100vh;
