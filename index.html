@@ -1,42 +1,60 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University API</title>
+    <title>INST377 Final Project</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>University API</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section>
-        <h2>Search</h2>
-        <form>
-          <label for="search">Search for a university:</label>
-          <input type="text" id="search" name="search" placeholder="Enter a university name" />
-          <input type="submit" value="Search" />
-        </form>
-      </section>
-      <section>
-        <h2>Results</h2>
-        <ul>
-          <li><a href="#">University of California, Los Angeles</a></li>
-          <li><a href="#">University of Southern California</a></li>
-          <li><a href="#">California State University, Long Beach</a></li>
-          <li><a href="#">California Institute of Technology</a></li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <p>INST377 University API Project: Work in Progress</p>
-    </footer>
+    <div class="wrapper">
+      <header class="header">
+        <h1>University API Project</h1>
+      </header>
+      <div class="container">
+        <div class="upper_section box">
+          <h3>Universities by Country</h3>
+          <form action="">
+            <label for="country-select">Select a Country:</label>
+            <select id="country-select" name="country">
+              <option value="">All Countries</option>
+              <option value="usa">USA</option>
+              <option value="canada">Canada</option>
+              <option value="uk">UK</option>
+            </select>
+          </form>
+          <table id="university-table">
+            <thead>
+              <tr>
+                <th>University Name</th>
+                <th>Country</th>
+                <th>City</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- University data will be dynamically added here via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        <div class="bottom_section box">
+          <h3>Bubble Map</h3>
+          <div class="box">
+            <ol id="restaurant_list">
+              A bubble map showing the amount of schools in each country
+            </ol>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        My Github Account:
+        <a
+          href="http://github.com/bringit2142/INST377-Lab-Work"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Link to account</a
+        >
+      </footer>
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>
