@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>INST377 Final Project</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -13,53 +14,23 @@
           <nav class="nav_right">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
+          <a href="universitiesTable.html">University Table</a>
       </nav>
         </h1>
       </header>
-      <div class="container">
-        <div class="upper_section box">
-          <h3>Universities by Country</h3>
-          <form action="">
-            <label for="country-select">Select a Country:</label>
-            <select id="country-select" name="country">
-              <option value="">All Countries</option>
-              <option value="usa">USA</option>
-              <option value="canada">Canada</option>
-              <option value="uk">UK</option>
-            </select>
-          </form>
-          <table id="university-table">
-            <thead>
-              <tr>
-                <th>University Name</th>
-                <th>Country</th>
-                <th>City</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- University data will be dynamically added here via JavaScript -->
-            </tbody>
-          </table>
-        </div>
-        <div class="bottom_section box">
-          <h3>Bubble Map</h3>
-          <div class="box">
-            <ol id="restaurant_list">
-              A bubble map showing the amount of schools in each country.
-            </ol>
-          </div>
-        </div>
+          <canvas id="universitiesChart"></canvas>
+          <script src="script.js"></script>
       </div>
       <footer class="footer">
-        My Github Account:
+       Github Project Link:
         <a
-          href="http://github.com/bringit2142/INST377-Lab-Work"
+          href="https://github.com/bringit2142/INST377-Project"
           target="_blank"
           rel="noopener noreferrer"
           >Link to account</a
         >
       </footer>
     </div>
-    <script src="./script.js"></script>
+    <!--<script src="script.js"></script>-->
   </body>
 </html>

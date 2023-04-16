@@ -122,6 +122,12 @@ form {
   And will be what displays in your client
 */
 
+#universitiesChart {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+}
+
 .box {
     background-color: rgba(239, 239, 239, 0.40);
     border: 2px dashed;
