@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INST377 Final Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>University API Project
+          <nav class="nav_right">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+      </nav>
+        </h1>
+      </header>
+      <div class="container">
+        <div class="upper_section box">
+          <h3>Universities by Country</h3>
+          <form action="">
+            <label for="country-select">Select a Country:</label>
+            <select id="country-select" name="country">
+              <option value="">All Countries</option>
+              <option value="usa">USA</option>
+              <option value="canada">Canada</option>
+              <option value="uk">UK</option>
+            </select>
+          </form>
+          <table id="university-table">
+            <thead>
+              <tr>
+                <th>University Name</th>
+                <th>Country</th>
+                <th>City</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- University data will be dynamically added here via JavaScript -->
+            </tbody>
+          </table>
+        </div>
