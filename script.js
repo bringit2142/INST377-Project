@@ -1,5 +1,6 @@
 async function fetchUniversities() {
-  const url = "https://universities.hipolabs.com/search";
+  const url =
+    "http://universities.hipolabs.com/search";
 
   try {
     const response = await fetch(url);
@@ -11,6 +12,7 @@ async function fetchUniversities() {
       return acc;
     }, {});
 
+    console.log(universitiesData);
     const ctx = document.getElementById("universitiesChart").getContext("2d");
     const chart = new Chart(ctx, {
       type: "bar",
