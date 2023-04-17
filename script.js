@@ -1,5 +1,5 @@
 async function fetchUniversities() {
-  const url = "http://universities.hipolabs.com/search";
+  const url = "https://universities.hipolabs.com/search";
 
   try {
     const response = await fetch(url);
