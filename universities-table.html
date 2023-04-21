@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>INST377 Final Project</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -14,6 +13,7 @@
           <nav class="nav_right">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
+          <a href="universities-table.html">University Table</a>
       </nav>
         </h1>
       </header>
@@ -23,18 +23,14 @@
           <form action="">
             <label for="country-select">Select a Country:</label>
             <select id="country-select" name="country">
-              <option value="">All Countries</option>
-              <option value="usa">USA</option>
-              <option value="canada">Canada</option>
-              <option value="uk">UK</option>
+              <option value="">Select An Option</option>
             </select>
           </form>
           <table id="university-table">
             <thead>
               <tr>
                 <th>University Name</th>
-                <th>Country</th>
-                <th>City</th>
+                <th>Webpage</th>
               </tr>
             </thead>
             <tbody>
@@ -42,3 +38,16 @@
             </tbody>
           </table>
         </div>
+    </div>
+    <footer class="footer">
+       Github Project Link:
+        <a
+          href="https://github.com/bringit2142/INST377-Project"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Link to account</a
+        >
+      </footer>
+    <script src="university_table.js"></script>
+  </body>
+</html>

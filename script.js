@@ -30,6 +30,13 @@ async function fetchUniversities() {
       },
       options: {
         scales: {
+          xAxes: [
+            {
+              ticks: {
+                barPercentage: 0.9, 
+              },
+            },
+          ],
           yAxes: [
             {
               ticks: {
