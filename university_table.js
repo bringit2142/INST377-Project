@@ -3,34 +3,59 @@ countrySelect.addEventListener("change", handleCountrySelect);
 
 async function handleCountrySelect(event) {
   const selectedCountry = event.target.value;
-  if (selectedCountry === ""){
+  if (selectedCountry === "") {
     clearTable();
     return;
   }
-  const url =
-    selectedCountry === ""
-      ? "http://universities.hipolabs.com/search"
-      : `http://universities.hipolabs.com/search?country=${selectedCountry}`;
 
-  try {
-    const response = await fetch(url);
-    const universities = await response.json();
-    updateTable(universities);
-  } catch (error) {
-    console.error(error);
+  let universities;
+  const localStorageData = localStorage.getItem("universities");
+  if (localStorageData) {
+    universities = JSON.parse(localStorageData);
+  } else {
+    const url = "http://universities.hipolabs.com/search";
+    try {
+      const response = await fetch(url);
+      universities = await response.json();
+      localStorage.setItem("universities", JSON.stringify(universities));
+    } catch (error) {
+      console.error(error);
+      return;
+    }
   }
+
+  const filteredUniversities = universities.filter(
+    (university) =>
+      university.country &&
+      university.country.toLowerCase() === selectedCountry.toLowerCase()
+  );
+  updateTable(filteredUniversities);
 }
 
 async function populateCountries() {
-  const url = "http://universities.hipolabs.com/search?country=";
-  const response = await fetch(url);
-  const universities = await response.json();
+  const url = "http://universities.hipolabs.com/search";
+  let universities;
+  const localStorageData = localStorage.getItem("universities");
+  if (localStorageData) {
+    universities = JSON.parse(localStorageData);
+  } else {
+    try {
+      const response = await fetch(url);
+      universities = await response.json();
+      localStorage.setItem("universities", JSON.stringify(universities));
+    } catch (error) {
+      console.error(error);
+      return;
+    }
+  }
+
   const countries = new Set();
   universities.forEach((university) => {
     if (university.country) {
       countries.add(university.country.toLowerCase());
     }
   });
+
   const countrySelect = document.getElementById("country-select");
   for (let country of countries) {
     const option = document.createElement("option");
@@ -40,7 +65,7 @@ async function populateCountries() {
   }
 }
 
-function clearTable(){
+function clearTable() {
   const tbody = document.querySelector("#university-table tbody");
   tbody.innerHTML = "";
 }
@@ -66,8 +91,6 @@ function updateTable(universities) {
 
     row.appendChild(nameCell);
     row.appendChild(webPageCell);
-
-
 
     tbody.appendChild(row);
   });
