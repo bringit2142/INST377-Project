@@ -59,7 +59,12 @@ form {
   -Testing a comment
 */
 .nav_right{
-    float: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav_right a{
+    padding-right: 10px;
 }
 
 .wrapper {
